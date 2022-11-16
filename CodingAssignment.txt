@@ -1,0 +1,48 @@
+CODING ASSIGNMENT
+1. Find the Most Frequent Item in an Array, e.g.,  arr1 = [2, 'b', 1, 'a', 2, 6, 'a', 3, 'b', 2, 9, 3,2], output => 2.
+
+
+//var arr1=[2, 'b', 1, 'a', 2, 6, 'a', 3, 'b', 2, 9, 3,2];
+
+function getMostFrequent(arr){
+var mf = 1;
+var n = 0;
+var item;
+for (var i=0; i<arr.length; i++)
+{ 
+        for (var y=i; y<arr.length; y++)
+        {
+                if (arr[i] == arr[y])
+                 n++;
+                if (mf<n)
+                {
+                  mf=n; 
+                  item = arr[i];
+                }
+        }
+        answer = item;
+        n = 0;
+}
+return answer;
+}
+
+//console.log(getMostFrequent(arr1))
+
+
+
+
+
+2. Check if a Number is a Palindrome, e.g., 212 => true, 2121 => false
+
+//let pal = "212"
+//let notPal = "1212"
+
+function checkPalindrome(str) {
+  var len = Math.floor(str.length / 2);
+  for (var i = 0; i < len; i++)
+    if (str[i] !== str[str.length - i - 1])
+      return false;
+    return true;
+}
+
+//console.log(checkPalindrome(pal))
